@@ -1,14 +1,14 @@
 [options]
-addons_path = ./odoo/addons,./branch,./trunk
+addons_path = ./odoo/addons,./trunk
 admin_passwd = admin
 csv_internal_sep = ,
-db_host = localhost
+db_host = False
 db_maxconn = 64
 db_name = False
-db_password = certicom
+db_password = False
 db_port = False
 db_template = template1
-db_user = certicom
+db_user = mruelas
 dbfilter = .*
 debug_mode = False
 demo = {}
@@ -58,8 +58,8 @@ without_demo = False
 workers = 0
 xmlrpc = True
 xmlrpc_interface = 
-xmlrpc_port = 28069
+xmlrpc_port = 8069
 xmlrpcs = True
 xmlrpcs_interface = 
-xmlrpcs_port = 28071
+xmlrpcs_port = 8071
 
