@@ -1,0 +1,2 @@
+Pendientes:
+- Validar que el abastecimiento contenga lo requerido en la linea de la orden de venta y no duplique o sobreescriba el abastecmiento hecho manualmente

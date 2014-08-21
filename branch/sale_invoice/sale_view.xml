@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record model='ir.ui.view' id='view_order_form'>
+			<field name='name'>sale.order.form.inherit.sale.invoice</field>
+			<field name='model'>sale.order</field>
+			<field name='inherit_id' ref='sale.view_order_form'/>
+			<field name='arch' type='xml'>
+				<xpath expr="//notebook" position="inside">
+					<page string="Invoices">
+						<field name="invoice_ids"/>
+					</page>
+				</xpath>
+			</field>
+		</record>
+
+	</data>
+</openerp>

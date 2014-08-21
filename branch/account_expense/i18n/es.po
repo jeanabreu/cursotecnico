@@ -1,0 +1,702 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* account_expense
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 7.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-05-07 21:45+0000\n"
+"PO-Revision-Date: 2014-05-30 17:35-0500\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+
+#. module: account_expense
+#: view:account.expense.invoice:0
+#: model:ir.ui.menu,name:account_expense.account_expense_invoice_menu
+msgid "Expense Invoice"
+msgstr "Factura de gastos"
+
+#. module: account_expense
+#: selection:account.expense,state:0
+msgid "Pre-Approve"
+msgstr "Pre-Aprobado"
+
+#. module: account_expense
+#: help:account.expense,partner_id:0
+msgid "Partner asocied to cash journal, usually an employee"
+msgstr "Socio asociado al libro de caja, por lo general un empleado"
+
+#. module: account_expense
+#: help:account.expense,account_analytic_id:0
+msgid "Analytic account for apply on the payment step"
+msgstr "Cuenta analítica para aplicarla en la etapa de pagos"
+
+#. module: account_expense
+#: help:account.expense,amount_transfer:0
+msgid "Total income amount transferred to this expenditure"
+msgstr "Cantidad total de ingresos transferidos a este gasto."
+
+#. module: account_expense
+#: view:account.expense.invoice:0
+msgid "Group By..."
+msgstr "Agrupar por..."
+
+#. module: account_expense
+#: view:account.expense.invoice:0
+msgid "Supplier"
+msgstr "Proveedor"
+
+#. module: account_expense
+#: view:account.expense:0
+#: field:account.expense,amount_untaxed:0
+msgid "Total Untaxed"
+msgstr "Total sin Impuesto"
+
+#. module: account_expense
+#: field:account.expense.invoice,expense_total:0
+msgid "Total Expense"
+msgstr "Total de gastos"
+
+#. module: account_expense
+#: field:account.expense,message_unread:0
+msgid "Unread Messages"
+msgstr "Mensajes no leídos"
+
+#. module: account_expense
+#: selection:account.expense,type:0
+msgid "Pay Bill"
+msgstr "Pagar facturas"
+
+#. module: account_expense
+#: field:account.expense,company_id:0
+msgid "Company"
+msgstr "Compañia"
+
+#. module: account_expense
+#: view:account.expense.invoice:0
+msgid "Proforma/Open/Paid Invoices"
+msgstr "Proforma / Abrir / Facturas pagadas"
+
+#. module: account_expense
+#: view:account.expense:0
+#: view:account.expense.invoice:0
+msgid "Set to Draft"
+msgstr "Establecer como borrador"
+
+#. module: account_expense
+#: help:account.expense,origin:0
+msgid "Reference of the document that produced this invoice."
+msgstr "Referencia del documento que produjo esta factura."
+
+#. module: account_expense
+#: view:account.expense.invoice:0
+msgid "Salesperson"
+msgstr "Vendedor"
+
+#. module: account_expense
+#: field:account.expense,amount_transfer:0
+#: field:account.expense,amount_transfer_inv:0
+msgid "Total Transfer"
+msgstr "Transferencia total"
+
+#. module: account_expense
+#: view:account.expense:0
+#: selection:account.expense,state:0
+#: view:account.expense.invoice:0
+msgid "Validate"
+msgstr "Validar"
+
+#. module: account_expense
+#: view:account.expense.invoice:0
+msgid "Due Date"
+msgstr "Fecha de vencimiento"
+
+#. module: account_expense
+#: field:account.expense,notes:0
+msgid "Notes"
+msgstr "Notas"
+
+#. module: account_expense
+#: field:account.expense,message_ids:0
+msgid "Messages"
+msgstr "Mensajes"
+
+#. module: account_expense
+#: view:account.expense.invoice:0
+#: field:account.expense.invoice,tax_ids:0
+msgid "Taxes"
+msgstr "Impuestos"
+
+#. module: account_expense
+#: help:account.expense,amount_statement_inv:0
+msgid "Total income amount payed to this pay bill with possitive sign"
+msgstr "Importe total sobre la renta pagada a esta factura de pago con signo positivo."
+
+#. module: account_expense
+#: field:account.expense,transfer_ids:0
+msgid "Money Transfers"
+msgstr "Transferencias de Dinero"
+
+#. module: account_expense
+#: code:addons/account_expense/account_expense.py:699
+#, python-format
+msgid "No Partner Defined !"
+msgstr "Ningún Partner definido!"
+
+#. module: account_expense
+#: help:account.expense,message_unread:0
+msgid "If checked new messages require your attention."
+msgstr "Si hay mensajes nuevos controladas requieren su atención."
+
+#. module: account_expense
+#: model:ir.model,name:account_expense.model_account_bank_statement_line
+msgid "Bank Statement Line"
+msgstr "Línea de extracto bancario"
+
+#. module: account_expense
+#: help:account.expense,amount_total:0
+msgid "Total amount of expenses, included taxes."
+msgstr "Importe total de los gastos, incluido impuestos."
+
+#. module: account_expense
+#: model:ir.model,name:account_expense.model_account_expense
+msgid "Expense with multiple invoices and one payment"
+msgstr "Gastos con múltiples facturas y un pago."
+
+#. module: account_expense
+#: model:ir.model,name:account_expense.model_account_tax
+msgid "Tax"
+msgstr "Impuesto"
+
+#. module: account_expense
+#: field:account.expense,account_analytic_id:0
+msgid "Analytic Account"
+msgstr "Cuenta Analítica"
+
+#. module: account_expense
+#: help:account.expense,message_summary:0
+msgid "Holds the Chatter summary (number of messages, ...). This summary is directly in html format in order to be inserted in kanban views."
+msgstr "Contiene el resumen del Chat (número de mensajes, ...). Este resumen es directamente en formato HTML con el fin de insertarse en las vistas de kanban."
+
+#. module: account_expense
+#: view:account.expense:0
+#: view:account.expense.invoice:0
+msgid "(update)"
+msgstr "(Actualización)"
+
+#. module: account_expense
+#: field:account.expense,partner_id:0
+#: view:account.expense.invoice:0
+msgid "Partner"
+msgstr "Partner"
+
+#. module: account_expense
+#: code:addons/account_expense/account_expense.py:307
+#, python-format
+msgid "The balance of expense must be zero. The actual balance on %s is %s %s"
+msgstr "El saldo de gastos debe ser cero. El saldo real en% s es% s% s"
+
+#. module: account_expense
+#: view:account.expense.invoice:0
+msgid "Expense_Approve"
+msgstr "Aprobar gastos"
+
+#. module: account_expense
+#: help:account.expense,amount_transfer_inv:0
+msgid "Total income amount transferred to this expenditure with possitive sign"
+msgstr "Cantidad total de ingresos transferidos a este gasto con signo positivo."
+
+#. module: account_expense
+#: field:account.expense,move_ids:0
+msgid "Account Moves"
+msgstr "Movimientos de Cuenta"
+
+#. module: account_expense
+#: model:ir.model,name:account_expense.model_account_voucher
+msgid "Accounting Voucher"
+msgstr "Comprobantes contables"
+
+#. module: account_expense
+#: selection:account.expense,state:0
+msgid "Confirm"
+msgstr "Confirmar"
+
+#. module: account_expense
+#: field:account.expense,exchange_inv:0
+msgid "1 / Exchange Rate"
+msgstr "1 / Tipo de cambio"
+
+#. module: account_expense
+#: view:account.expense.invoice:0
+msgid "My Invoices"
+msgstr "Mis Facturas"
+
+#. module: account_expense
+#: field:account.expense,name:0
+msgid "Number"
+msgstr "Número"
+
+#. module: account_expense
+#: field:account.expense,state:0
+msgid "State"
+msgstr "Estado"
+
+#. module: account_expense
+#: field:account.expense,message_follower_ids:0
+msgid "Followers"
+msgstr "Seguidores"
+
+#. module: account_expense
+#: field:account.expense,type:0
+msgid "Type"
+msgstr "Tipo"
+
+#. module: account_expense
+#: view:account.expense:0
+#: view:account.expense.invoice:0
+msgid "Recompute taxes and total"
+msgstr "Recalcular Impuestos y el Total"
+
+#. module: account_expense
+#: model:ir.module.category,description:account_expense.module_category_expense
+msgid "Helps you manage your expenses with multiple invoices in easy and secure way."
+msgstr "Ayuda a administrar sus gastos con múltiples facturas en forma fácil y segura."
+
+#. module: account_expense
+#: selection:account.expense,type:0
+#: view:account.expense.invoice:0
+#: field:account.expense.invoice,expense_id:0
+msgid "Expense"
+msgstr "Gasto"
+
+#. module: account_expense
+#: field:account.expense,invoice_ids:0
+msgid "Expense Lines"
+msgstr "Líneas de gastos"
+
+#. module: account_expense
+#: selection:account.expense,state:0
+msgid "Pre-Confirm"
+msgstr "Pre - Confirmación"
+
+#. module: account_expense
+#: view:account.expense:0
+#: view:account.expense.invoice:0
+msgid "Invoices"
+msgstr "Facturas"
+
+#. module: account_expense
+#: field:account.expense,amount_tax:0
+msgid "Total Tax"
+msgstr "Impuesto Total"
+
+#. module: account_expense
+#: field:account.expense,amount_balance:0
+msgid "Total Balance"
+msgstr "Saldo Total "
+
+#. module: account_expense
+#: model:ir.model,name:account_expense.model_account_expense_invoice
+msgid "account.expense.invoice"
+msgstr "Factura de gastos de la cuenta"
+
+#. module: account_expense
+#: field:account.expense,currency_id:0
+msgid "Currency"
+msgstr "Moneda"
+
+#. module: account_expense
+#: view:account.expense.invoice:0
+msgid "Unpaid Invoices"
+msgstr "Facturas pendientes de pago"
+
+#. module: account_expense
+#: model:ir.actions.act_window,help:account_expense.account_expense_invoice_list_action
+msgid ""
+"<p class=\"oe_view_nocontent_create\">\n"
+"                Click to record a new expense invoice.\n"
+"              </p><p>\n"
+"                You can control the invoice from your supplier according to\n"
+"                what you expensed or purchasedd.\n"
+"              </p>\n"
+"            "
+msgstr ""
+"<p class=\"oe_view_nocontent_create\">\n"
+"                 Haga clic aquí para registrar una nueva factura de gastos.\n"
+"              </p><p>\n"
+"                Usted puede controlar la factura de su proveedor de acuerdo a\n"
+"                lo que a gastado o comprado.\n"
+"              </p>\n"
+"            "
+
+#. module: account_expense
+#: code:addons/account_expense/account_expense.py:699
+#, python-format
+msgid "You must first select a partner !"
+msgstr "Primero debe seleccionar un Partner !"
+
+#. module: account_expense
+#: sql_constraint:account.expense:0
+#: code:addons/account_expense/account_expense.py:199
+#, python-format
+msgid "The number must be unique!"
+msgstr "El número debe ser único!"
+
+#. module: account_expense
+#: view:account.expense:0
+msgid "Expenses Notes..."
+msgstr "Notas de gastos..."
+
+#. module: account_expense
+#: view:account.expense.invoice:0
+msgid "Draft Invoices"
+msgstr "Factura Borrador"
+
+#. module: account_expense
+#: view:account.expense.invoice:0
+msgid "Invoice Date"
+msgstr "Fecha de la factura"
+
+#. module: account_expense
+#: model:ir.actions.act_window,name:account_expense.account_expense_invoice_list_action
+msgid "Expense Invoices"
+msgstr "Facturas de gastos"
+
+#. module: account_expense
+#: model:mail.message.subtype,description:account_expense.mt_expense_done
+msgid "Account Expense Done"
+msgstr "Cuenta de gastos, Realizado"
+
+#. module: account_expense
+#: selection:account.expense,state:0
+#: view:account.expense.invoice:0
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: account_expense
+#: field:account.expense,amount_statement:0
+#: field:account.expense,amount_statement_inv:0
+msgid "Total Statement"
+msgstr "Estado Total"
+
+#. module: account_expense
+#: view:account.expense.invoice:0
+msgid "Status"
+msgstr "Estado"
+
+#. module: account_expense
+#: view:account.expense.invoice:0
+msgid "Draft Expense Invoice"
+msgstr "Factura Borrador de gastos"
+
+#. module: account_expense
+#: help:account.expense,journal_id:0
+msgid "Cash Journal to pay the invoices"
+msgstr "Diario de caja para pagar las facturas"
+
+#. module: account_expense
+#: view:account.expense:0
+#: field:account.expense,amount_total:0
+#: view:account.expense.invoice:0
+msgid "Total Amount"
+msgstr "Importe Total"
+
+#. module: account_expense
+#: model:ir.model,name:account_expense.model_account_transfer
+msgid "Account Cash and Bank Transfer"
+msgstr "Cuenta de efectivo y transferencia bancaria"
+
+#. module: account_expense
+#: selection:account.expense,state:0
+msgid "Paid"
+msgstr "Pagado"
+
+#. module: account_expense
+#: selection:account.expense,type:0
+msgid "Expenditure"
+msgstr "Desembolso"
+
+#. module: account_expense
+#: model:res.groups,name:account_expense.group_expense_user
+msgid "User"
+msgstr "Usuario"
+
+#. module: account_expense
+#: view:account.expense.invoice:0
+msgid "Payment Date"
+msgstr "Fecha de Pago"
+
+#. module: account_expense
+#: field:account.expense,date:0
+msgid "Date"
+msgstr "Fecha"
+
+#. module: account_expense
+#: field:account.expense,message_is_follower:0
+msgid "Is a Follower"
+msgstr "Es un seguidor"
+
+#. module: account_expense
+#: view:account.expense.invoice:0
+msgid "Proforma"
+msgstr "Proforma"
+
+#. module: account_expense
+#: field:account.expense.invoice,expense_account_id:0
+msgid "Expense Account"
+msgstr "Cuenta de gastos."
+
+#. module: account_expense
+#: field:account.expense,message_summary:0
+msgid "Summary"
+msgstr "Resumen"
+
+#. module: account_expense
+#: view:account.expense.invoice:0
+msgid "Unpaid"
+msgstr "No pagado"
+
+#. module: account_expense
+#: help:account.expense,period_id:0
+msgid "Keep empty to use the period of the validation(invoice) date."
+msgstr "Mantener en blanco para usar el período de la fecha de validación (factura)."
+
+#. module: account_expense
+#: view:account.expense.invoice:0
+msgid "Search Invoice"
+msgstr "Buscar factura"
+
+#. module: account_expense
+#: view:account.expense.invoice:0
+msgid "Refund"
+msgstr "Reembolso"
+
+#. module: account_expense
+#: view:account.expense.invoice:0
+msgid "Expense in One Line"
+msgstr "Gastos en una línea"
+
+#. module: account_expense
+#: view:account.expense.invoice:0
+msgid "Residual Amount"
+msgstr "Cantidad residual"
+
+#. module: account_expense
+#: view:account.expense:0
+msgid "Account Expense List"
+msgstr "Lista de cuentas de gasto."
+
+#. module: account_expense
+#: field:account.expense.invoice,expense_untaxed:0
+msgid "Expense  Untaxed"
+msgstr "Gastos sin Impuestos"
+
+#. module: account_expense
+#: field:account.expense,period_id:0
+#: view:account.expense.invoice:0
+msgid "Period"
+msgstr "Período"
+
+#. module: account_expense
+#: view:account.expense:0
+#: selection:account.expense,state:0
+#: model:mail.message.subtype,name:account_expense.mt_expense_done
+msgid "Done"
+msgstr "Realizado"
+
+#. module: account_expense
+#: view:account.expense.invoice:0
+#: field:account.expense.invoice,invoice_id:0
+msgid "Invoice"
+msgstr "Factura"
+
+#. module: account_expense
+#: view:account.expense:0
+#: selection:account.expense,state:0
+#: view:account.expense.invoice:0
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: account_expense
+#: field:account.expense,statement_ids:0
+msgid "Statement Lines"
+msgstr "Líneas de Estado"
+
+#. module: account_expense
+#: field:account.expense,origin:0
+msgid "Source Document"
+msgstr "Documento de origen"
+
+#. module: account_expense
+#: view:account.expense:0
+#: view:account.expense.invoice:0
+msgid "Other Info"
+msgstr "Otro tipo de información"
+
+#. module: account_expense
+#: view:account.expense:0
+#: view:account.expense.invoice:0
+msgid "Pay"
+msgstr "Pagar"
+
+#. module: account_expense
+#: view:account.expense.invoice:0
+msgid "Responsible"
+msgstr "Responsable"
+
+#. module: account_expense
+#: field:account.expense.invoice,analytic_id:0
+msgid "Analytic"
+msgstr "Analítica"
+
+#. module: account_expense
+#: code:addons/account_expense/account_expense.py:306
+#, python-format
+msgid "Wrong Balance !"
+msgstr "Balance Incorrecto!"
+
+#. module: account_expense
+#: view:account.expense.invoice:0
+msgid "Details"
+msgstr "Detalles"
+
+#. module: account_expense
+#: field:account.journal,is_expense:0
+msgid "Expense Journal"
+msgstr "Gasto Diario"
+
+#. module: account_expense
+#: code:addons/account_expense/account.py:49
+#, python-format
+msgid "You can not cancel a transfer associate to a expense in state done (Transfer: %s - Expense: %s)"
+msgstr "No se puede cancelar un asociado de la transferencia a un gasto en estado de realizado (Transferencia:% s - Gasto:% s)"
+
+#. module: account_expense
+#: field:account.expense,exchange_rate:0
+msgid "Exchange Rate"
+msgstr "Tipo de Cambio"
+
+#. module: account_expense
+#: field:account.expense.invoice,description:0
+msgid "Description"
+msgstr "Descripción"
+
+#. module: account_expense
+#: field:account.expense,journal_id:0
+#: view:account.expense.invoice:0
+#: model:ir.model,name:account_expense.model_account_journal
+msgid "Journal"
+msgstr "Diario"
+
+#. module: account_expense
+#: help:account.expense,amount_balance:0
+msgid "The balance or difference amount, must be zero to done this document. Balance = Incomes - Expenses"
+msgstr "El saldo o importe de la diferencia, debe ser cero para realizar este documento. Equilibrio = Ingresos - Gastos"
+
+#. module: account_expense
+#: view:account.transfer:0
+msgid "Expense Transfer "
+msgstr "Transferencia de Gasto"
+
+#. module: account_expense
+#: view:account.expense:0
+msgid "Expense "
+msgstr "Gasto"
+
+#. module: account_expense
+#: view:account.expense.invoice:0
+msgid "Invoice lines"
+msgstr "Líneas de factura"
+
+#. module: account_expense
+#: help:account.expense,amount_statement:0
+msgid "Total income amount payed to this pay bill"
+msgstr "Importe total sobre la renta pagada a esta factura de pago"
+
+#. module: account_expense
+#: view:account.expense.invoice:0
+msgid "Invoces with the related expense in approve state"
+msgstr "Facturas con el gasto relacionado a aprobar el estado"
+
+#. module: account_expense
+#: field:account.expense,have_partner:0
+msgid "Have Partner"
+msgstr "Tienen Partner"
+
+#. module: account_expense
+#: field:account.expense.invoice,product_id:0
+msgid "Product"
+msgstr "Producto"
+
+#. module: account_expense
+#: view:account.expense.invoice:0
+msgid "Payments"
+msgstr "Pagos"
+
+#. module: account_expense
+#: code:addons/account_expense/account.py:49
+#, python-format
+msgid "User Error!"
+msgstr "Error Usuario!"
+
+#. module: account_expense
+#: selection:account.expense,state:0
+msgid "Approve"
+msgstr "Aprobar"
+
+#. module: account_expense
+#: help:account.expense,message_ids:0
+msgid "Messages and communication history"
+msgstr "Los mensajes y la historia de la comunicación"
+
+#. module: account_expense
+#: view:account.expense.invoice:0
+msgid "Draft Refund"
+msgstr "Borrador de Reembolso"
+
+#. module: account_expense
+#: model:ir.model,name:account_expense.model_account_move
+msgid "Account Entry"
+msgstr "Entrada de la cuenta"
+
+#. module: account_expense
+#: view:account.expense.invoice:0
+msgid "Proforma Invoices"
+msgstr "Proforma de  Facturas"
+
+#. module: account_expense
+#: field:account.bank.statement.line,expense_id:0
+#: view:account.expense:0
+#: field:account.move,expense_id:0
+#: field:account.transfer,expense_id:0
+#: field:account.voucher,expense_id:0
+#: model:ir.module.category,name:account_expense.module_category_expense
+msgid "Account Expense"
+msgstr "Cuenta de gastos"
+
+#. module: account_expense
+#: model:ir.actions.act_window,name:account_expense.account_expense_list_action
+#: model:ir.ui.menu,name:account_expense.account_expense_menu
+#: model:ir.ui.menu,name:account_expense.account_expense_root_menu
+msgid "Expenses"
+msgstr "Gastos"
+
+#. module: account_expense
+#: model:res.groups,name:account_expense.group_expense_manager
+msgid "Manager"
+msgstr "Responsable"
+
+#. module: account_expense
+#: view:account.expense:0
+msgid "Accounting"
+msgstr "Contabilidad"
+
+#. module: account_expense
+#: view:account.expense.invoice:0
+msgid "Untaxed Amount"
+msgstr "Importe sin Impuesto"

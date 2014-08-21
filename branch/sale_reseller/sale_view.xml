@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record model='ir.ui.view' id='view_order_form'>
+			<field name='name'>sale.order.form.inherit.sale.reseller</field>
+			<field name='model'>sale.order</field>
+			<field name='inherit_id' ref='sale.view_order_form'/>
+			<field name='arch' type='xml'>
+				<xpath expr="//field[@name='user_id']" position="after">
+					<field name="reseller" invisible="1"/>
+					<field name="reseller_customer_id" attrs="{'invisible':[('reseller','=',False)]}"/>
+				</xpath>
+			</field>
+		</record>
+		
+		<record model='ir.ui.view' id='view_sales_order_filter'>
+			<field name='name'>sale.order.list.select.inherit.sale.reseller</field>
+			<field name='model'>sale.order</field>
+			<field name='inherit_id' ref='sale.view_sales_order_filter'/>
+			<field name='arch' type='xml'>
+				<xpath expr="//field[@name='partner_id']" position="after">
+					<field name="reseller_customer_id"/>
+				</xpath>
+			</field>
+		</record>
+		
+	</data>
+</openerp>

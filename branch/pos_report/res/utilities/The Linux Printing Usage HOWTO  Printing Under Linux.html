@@ -1,0 +1,253 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!-- saved from url=(0049)http://tldp.org/HOWTO/Printing-Usage-HOWTO-2.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+ <meta name="GENERATOR" content="SGML-Tools 1.0.9">
+ <title>The Linux Printing Usage HOWTO: Printing Under Linux</title>
+ <link href="http://tldp.org/HOWTO/Printing-Usage-HOWTO-3.html" rel="next">
+ <link href="http://tldp.org/HOWTO/Printing-Usage-HOWTO-1.html" rel="previous">
+ <link href="http://tldp.org/HOWTO/Printing-Usage-HOWTO.html#toc2" rel="contents">
+</head>
+<body>
+<a href="http://tldp.org/HOWTO/Printing-Usage-HOWTO-3.html">Next</a>
+<a href="http://tldp.org/HOWTO/Printing-Usage-HOWTO-1.html">Previous</a>
+<a href="http://tldp.org/HOWTO/Printing-Usage-HOWTO.html#toc2">Contents</a>
+<hr>
+<h2><a name="s2">2. Printing Under Linux</a></h2>
+
+<p>This section discusses how to print files, examine the print queue, remove
+jobs from the print queue, format files before printing them, and configure
+your printing environment.
+</p><p>
+</p><h2><a name="ss2.1">2.1 History of Linux Printing</a>
+</h2>
+
+<p>
+<!--
+printing!history of
+-->
+
+The Linux printing system---the <em>lp</em> system---is a port of the source
+code written by the Regents of the University of California for the Berkeley
+Software Distribution version of the UNIX operating system.
+</p><p>
+</p><h2><a name="ss2.2">2.2 Printing a File Using <em>lpr</em></a>
+</h2>
+
+<p>
+<!--
+printing!using lpr command
+-->
+
+<!--
+lpr command!usage example
+-->
+
+By far, the most simplistic way to print in the Linux operating system is
+to send the file to be printed directly to the printing device.  One way
+to do this is to use the <em>cat</em> command.  As the <code>root</code> user,
+one could do something like
+</p><p>
+</p><blockquote><code>
+<pre># cat thesis.txt &gt; /dev/lp
+</pre>
+</code></blockquote>
+<p>In this case, <code>/dev/lp</code> is a symbolic link to the actual printing
+device---be it a dot-matrix, laser printer, typesetter, or plotter.  (See
+<em>ln</em>(1) for more information on symbolic links.)
+</p><p>For the purpose of security, only the <code>root</code> user and users in the
+same group as the print daemon are able to write directly to the printer.
+This is why commands such as <em>lpr</em>, <em>lprm</em>, and <em>lpq</em>
+have to be used to access the printer.
+</p><p>Because of this, users have to use <em>lpr</em> to print a file.  The
+<em>lpr</em> command takes care of all the initial work needed to print
+the file, and then it hands control over to another program, <em>lpd</em>,
+the line printing daemon.  The line printing daemon then tells the printer
+how to print the file.
+</p><p>When <em>lpr</em> is executed, it first copies the specified file to a
+certain directory (the spool directory) where the file remains until
+<em>lpd</em> prints it.  Once <em>lpd</em> is told that there is a file to
+print, it will spawn a copy of itself (what we programmers call forking). 
+This copy will print our file while the original copy waits for more
+requests.  This allows for multiple jobs to be queued at once.
+</p><p>The syntax of <em>lpr</em>(1) is a very familiar one,
+</p><p>
+</p><blockquote><code>
+<pre>$ lpr [ options ] [ filename ... ]
+</pre>
+</code></blockquote>
+<p>If <code>filename</code> is not specified, <em>lpr</em> expects input to come
+from standard input (usually the keyboard, or another program's output). 
+This enables the user to redirect a command's output to the print spooler. 
+As such,
+</p><p>
+</p><blockquote><code>
+<pre>$ cat thesis.txt | lpr
+</pre>
+</code></blockquote>
+<p>or,
+</p><p>
+</p><blockquote><code>
+<pre>$ pr -l60 thesis.txt | lpr
+</pre>
+</code></blockquote>
+<p>The <em>lpr</em> command accepts several command-line arguments that allow a
+user to control how it works.  Some of the most widely used arguments are:
+-<b>P</b>printer specifies the printer to use, -<b>h</b> suppresses printing of
+the burst page, -<b>s</b> creates a symbolic link instead of copying the file
+to the spool directory (useful for large files), and -<b>#</b>num
+specifies the number of copies to print.  An example interaction with
+<em>lpr</em> might be something like
+</p><p>
+</p><blockquote><code>
+<pre>$ lpr -#2 -sP dj thesis.txt
+</pre>
+</code></blockquote>
+<p>This command will create a symbolic link to the file <code>thesis.txt</code> in
+the spool directory for the printer named <em>dj</em>, where it would be
+processed by <em>lpd</em>.  It would then print a second copy of
+<code>thesis.txt</code>.
+</p><p>For a listing of all the options that <em>lpr</em> will recognize, see
+<em>lpr</em>(1).
+</p><p>
+</p><h2><a name="ss2.3">2.3 Viewing the Print Queue with <em>lpq</em></a>
+</h2>
+
+<p>
+<!--
+printing!using lpq command
+-->
+
+<!--
+lpq command!usage example
+-->
+
+To view the contents of the print queue, use the <em>lpq</em> command. 
+Issued without arguments, it returns the contents of the default printer's
+queue.
+</p><p>The returned output of <em>lpq</em> can be useful for many purposes.
+</p><p>
+</p><blockquote><code>
+<pre>$ lpq
+lp is ready and printing
+Rank   Owner      Job  Files                            Total Size
+active mwf        31   thesis.txt                       682048 bytes
+</pre>
+</code></blockquote>
+<p>
+</p><h2><a name="ss2.4">2.4 Canceling a Print Job Using <em>lprm</em></a>
+</h2>
+
+<p>
+<!--
+printing!using lprm command
+-->
+
+<!--
+lprm command!usage example
+-->
+
+Another useful feature of any printing system is the ability to cancel a job
+that has been previously queued.  To do this, use <em>lprm</em>.
+</p><p>
+</p><blockquote><code>
+<pre>$ lprm -
+</pre>
+</code></blockquote>
+<p>The above command cancels all of the print jobs that are owned by the user
+who issued the command.  A single print job can be canceled by first getting
+the job number as reported by <em>lpq</em> and then giving that number to
+<em>lprm</em>.  For example,
+</p><p>
+</p><blockquote><code>
+<pre>$ lprm 31
+</pre>
+</code></blockquote>
+<p>would cancel job 31 (<code>thesis.txt</code>) on the default printer.
+</p><p>
+</p><h2><a name="ss2.5">2.5 Controlling the lpd program with <em>lpc</em></a>
+</h2>
+
+<p>
+<!--
+printing!using lpc command
+-->
+
+<!--
+lpc command!usage example
+-->
+
+The <em>lpc</em>(8) program is used to control the printers that lpd serves. 
+you can enable or disable a printer or its queues, rearrange entries within
+a queue, and get a status report on the printers and their queues.
+Lpc is mostly used in a setup where there are multiple printers hanging off
+one machine.
+</p><p>
+</p><blockquote><code>
+<pre>$ lpc
+</pre>
+</code></blockquote>
+<p>The above will start the lpc program.  By default, this enters you into
+an interactive mode, and you can begin issuing commands.  The other option
+is to issue an lpc command on the command line.
+</p><p>
+</p><blockquote><code>
+<pre>$ lpc status all
+</pre>
+</code></blockquote>
+<p>A list of the available commands are in the <em>lpd</em> man page, but here
+are a few of the major commands you'll want to know about.  Any commands
+marked with <em>option</em> can either be a printer name (lp, print, etc) or
+the keyword <code>all</code>, which means all printers. 
+</p><p>
+</p><ul>
+<li> disable <em>option</em> -  prevents any new printer job from being entered</li>
+<li> down <em>option</em> - disables all printing on the printer</li>
+<li> enable <em>option</em> - allow new jobs to enter the print queue</li>
+<li> quit (or exit) - leave lpc</li>
+<li> restart <em>option</em> - restarts lpd for that printer</li>
+<li> status <em>option</em> - print status of printer</li>
+<li> up <em>option</em> - enable everything and start a new lpd</li>
+</ul>
+<p>
+</p><h2><a name="ss2.6">2.6 The RedHat printtool</a>
+</h2>
+
+<p>
+<!--
+printing!using Red Hat printool
+-->
+
+<!--
+Red Hat Linux!printool
+-->
+
+<!--
+printool utility
+-->
+
+Just a quick note here on RedHat's amazing printtool program.  It seems
+to do everything that a magicfilter would do.  RedHat already installs many
+of the programs to do the filtering.  Here's how I have my printer set up
+under RH 4.0 with an HP LJ 4L connected to my parallel port (should be
+the same for other versions of RH as well).
+</p><ul>
+<li>Become root and fire up printtool (if you su'ed, you remembered to
+SETENV DISPLAY :0.0 and xhost +, right?)</li>
+<li>Click "Add", and hit "OK" for a local printer.</li>
+<li>Fill in the printer device (/dev/lp1 for me)</li>
+<li>Fill in the input filter - Select a printer type, resolution, and paper
+size (ljet4, 300x300, and letter)</li>
+<li>Hit "OK" all the way back, and restart the lpd.</li>
+</ul>
+
+Just like rolling an /etc/printcap file by hand, you can have multiple
+printer definitions for each physical printer.  One for different paper
+sizes, resolutions, etc.
+<p>
+</p><hr>
+<a href="http://tldp.org/HOWTO/Printing-Usage-HOWTO-3.html">Next</a>
+<a href="http://tldp.org/HOWTO/Printing-Usage-HOWTO-1.html">Previous</a>
+<a href="http://tldp.org/HOWTO/Printing-Usage-HOWTO.html#toc2">Contents</a>
+
+
+</body></html>

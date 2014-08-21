@@ -1,0 +1,451 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* account_einvoice
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 7.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-05-07 21:41+0000\n"
+"PO-Revision-Date: 2014-06-20 10:23-0500\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+
+#. module: account_einvoice
+#: help:account.einvoice,name:0
+msgid "Usually the file name"
+msgstr "Por lo general, el nombre de archivo."
+
+#. module: account_einvoice
+#: field:account.einvoice,parent_id:0
+msgid "Parent Request"
+msgstr "Solicitud principal"
+
+#. module: account_einvoice
+#: view:account.einvoice:0
+msgid "Origin Request"
+msgstr "Solicitud de origen"
+
+#. module: account_einvoice
+#: view:account.ejournal:0
+msgid "Financial Journal"
+msgstr "Diario financiero"
+
+#. module: account_einvoice
+#: view:account.einvoice:0
+#: selection:account.einvoice,state:0
+msgid "Validated"
+msgstr "Validado"
+
+#. module: account_einvoice
+#: view:account.einvoice:0
+msgid "Draft Electronic Invoices"
+msgstr "Borrador de factura electrónica"
+
+#. module: account_einvoice
+#: model:ir.ui.menu,name:account_einvoice.einvoice_request_menu
+msgid "eInvoice Requested"
+msgstr "Factura electrónica Solicitada"
+
+#. module: account_einvoice
+#: view:account.einvoice:0
+#: view:account.ejournal:0
+msgid "Group By..."
+msgstr "Agrupar por..."
+
+#. module: account_einvoice
+#: field:account.einvoice,state:0
+msgid "State"
+msgstr "Estado"
+
+#. module: account_einvoice
+#: view:account.einvoice:0
+msgid "eInovice"
+msgstr "Factura electrónica"
+
+#. module: account_einvoice
+#: view:account.einvoice:0
+#: selection:account.einvoice,state:0
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: account_einvoice
+#: field:account.einvoice,message_unread:0
+msgid "Unread Messages"
+msgstr "Mensajes no leídos"
+
+#. module: account_einvoice
+#: view:account.einvoice:0
+#: selection:account.einvoice,state:0
+msgid "Done"
+msgstr "Realizado"
+
+#. module: account_einvoice
+#: view:account.einvoice:0
+#: field:account.einvoice,type:0
+#: view:account.ejournal:0
+#: field:account.ejournal,type:0
+msgid "Type"
+msgstr "Tipo"
+
+#. module: account_einvoice
+#: field:account.einvoice,name:0
+#: field:account.ejournal,code:0
+#: field:account.ejournal,name:0
+msgid "Name"
+msgstr "Nombre"
+
+#. module: account_einvoice
+#: field:account.ejournal,sequence_reuse:0
+msgid "Reuse Sequence"
+msgstr "Reutilizar Secuencia"
+
+#. module: account_einvoice
+#: help:account.einvoice,parent_id:0
+msgid "Parent request for this response"
+msgstr "Solicitud principal para esta respuesta"
+
+#. module: account_einvoice
+#: selection:account.einvoice,type:0
+msgid "Response"
+msgstr "Respuesta"
+
+#. module: account_einvoice
+#: view:account.einvoice:0
+msgid "Responses"
+msgstr "Respuestas"
+
+#. module: account_einvoice
+#: view:account.einvoice:0
+msgid "Done Electronic Invoices"
+msgstr "Facturas Electrónicas realizadas"
+
+#. module: account_einvoice
+#: selection:account.ejournal,sequence_type:0
+msgid "Normal"
+msgstr "Normal"
+
+#. module: account_einvoice
+#: model:ir.actions.act_window,name:account_einvoice.einvoice_response_list_action
+msgid "Response eInvoice"
+msgstr "Respuesta de Factura Eléctronica"
+
+#. module: account_einvoice
+#: view:account.ejournal:0
+#: field:account.ejournal,journal_ids:0
+msgid "Financial Journals"
+msgstr "Diarios financieros"
+
+#. module: account_einvoice
+#: field:account.einvoice,company_id:0
+#: field:account.ejournal,company_id:0
+msgid "Company"
+msgstr "Compañia"
+
+#. module: account_einvoice
+#: model:ir.actions.act_window,name:account_einvoice.einvoice_request_list_action
+msgid "Request eInvoice"
+msgstr "Solicitar Factura Electrónica"
+
+#. module: account_einvoice
+#: help:account.einvoice,message_summary:0
+msgid "Holds the Chatter summary (number of messages, ...). This summary is directly in html format in order to be inserted in kanban views."
+msgstr "Contiene el resumen del Chat (número de mensajes, ...). Este resumen es directamente en formato HTML con el fin de insertarse en las vistas de kanban."
+
+#. module: account_einvoice
+#: help:account.einvoice,message_ids:0
+msgid "Messages and communication history"
+msgstr "Mensajes y historial de comunicación"
+
+#. module: account_einvoice
+#: view:account.einvoice:0
+msgid "Validate"
+msgstr "Validar"
+
+#. module: account_einvoice
+#: field:account.einvoice,message_is_follower:0
+msgid "Is a Follower"
+msgstr "Es un seguidor"
+
+#. module: account_einvoice
+#: model:res.groups,name:account_einvoice.group_einvoice_user
+msgid "User"
+msgstr "Usuario"
+
+#. module: account_einvoice
+#: field:account.einvoice,invalidate_id:0
+msgid "Invalidate Request"
+msgstr "Invalidar Solicitud"
+
+#. module: account_einvoice
+#: view:account.einvoice:0
+#: field:account.einvoice,date:0
+msgid "Date"
+msgstr "Fecha"
+
+#. module: account_einvoice
+#: selection:account.ejournal,comunication_type:0
+msgid "Asynchronous"
+msgstr "Asíncrono"
+
+#. module: account_einvoice
+#: selection:account.ejournal,comunication_type:0
+msgid "Synchronous Batch"
+msgstr "Lotes sincrónicos"
+
+#. module: account_einvoice
+#: selection:account.ejournal,sequence_type:0
+msgid "On Financial Journal"
+msgstr "En diario financiero"
+
+#. module: account_einvoice
+#: selection:account.einvoice,type:0
+msgid "Request"
+msgstr "Solicitud"
+
+#. module: account_einvoice
+#: field:account.invoice,einvoice_ids:0
+msgid "Electronic Invoices"
+msgstr "Facturas electrónicas"
+
+#. module: account_einvoice
+#: field:account.ejournal,comunication_type:0
+msgid "Comunication Type"
+msgstr "Tipo comunicación"
+
+#. module: account_einvoice
+#: view:account.einvoice:0
+msgid "XML"
+msgstr "XML(Lenguaje de Marcas Extensible)"
+
+#. module: account_einvoice
+#: field:account.einvoice,xml:0
+msgid "XML Generated"
+msgstr "XML generado"
+
+#. module: account_einvoice
+#: selection:account.ejournal,comunication_type:0
+#: selection:account.ejournal,sequence_type:0
+msgid "None"
+msgstr "Ninguno"
+
+#. module: account_einvoice
+#: model:ir.ui.menu,name:account_einvoice.einvoice_response_menu
+msgid "eInvoice Responsed"
+msgstr "Factura electrónica respondida"
+
+#. module: account_einvoice
+#: model:ir.model,name:account_einvoice.model_account_invoice
+msgid "Invoice"
+msgstr "Factura"
+
+#. module: account_einvoice
+#: selection:account.einvoice,type:0
+msgid "Temporal Response"
+msgstr "Respuesta temporal"
+
+#. module: account_einvoice
+#: model:ir.model,name:account_einvoice.model_account_ejournal
+msgid "account.ejournal"
+msgstr "Cuenta de diario electrónico"
+
+#. module: account_einvoice
+#: field:account.einvoice,child_ids:0
+msgid "Child Responses"
+msgstr "Respuestas secundarias"
+
+#. module: account_einvoice
+#: view:account.einvoice:0
+msgid "eInvoice Request"
+msgstr "Solicitar factura electrónica"
+
+#. module: account_einvoice
+#: selection:account.ejournal,type:0
+msgid "Bill"
+msgstr "Cuenta"
+
+#. module: account_einvoice
+#: field:account.einvoice,message_ids:0
+msgid "Messages"
+msgstr "Mensajes"
+
+#. module: account_einvoice
+#: view:account.einvoice:0
+#: view:account.invoice:0
+#: field:account.invoice,is_einvoice:0
+#: field:account.journal,is_einvoice:0
+#: model:ir.module.category,name:account_einvoice.module_category_einvoice
+#: model:ir.ui.menu,name:account_einvoice.account_einvoice_config_menu
+#: model:ir.ui.menu,name:account_einvoice.account_einvoice_root_menu
+msgid "Electronic Invoice"
+msgstr "Factura electrónica"
+
+#. module: account_einvoice
+#: field:account.einvoice,ejournal_type:0
+msgid "eJournal type"
+msgstr "Tipo de diario electrónico"
+
+#. module: account_einvoice
+#: selection:account.ejournal,type:0
+msgid "Invalidate Bills"
+msgstr "Invalidar cuentas"
+
+#. module: account_einvoice
+#: view:account.einvoice:0
+msgid "Generate Invalidate Request"
+msgstr "Generate Invalidate Request"
+
+#. module: account_einvoice
+#: view:account.einvoice:0
+msgid "Electronic Invoice List"
+msgstr "Lista de Factura Electrónica"
+
+#. module: account_einvoice
+#: field:account.einvoice,ejournal_id:0
+#: view:account.ejournal:0
+#: field:account.journal,ejournal_id:0
+#: model:ir.actions.act_window,name:account_einvoice.ejournal_list_action
+#: model:ir.ui.menu,name:account_einvoice.ejournal_menu
+msgid "Electronic Journal"
+msgstr "Diario Electrónico"
+
+#. module: account_einvoice
+#: selection:account.einvoice,state:0
+msgid "Send"
+msgstr "Enviar"
+
+#. module: account_einvoice
+#: selection:account.einvoice,state:0
+msgid "Error"
+msgstr "Error"
+
+#. module: account_einvoice
+#: field:account.einvoice,message_summary:0
+msgid "Summary"
+msgstr "Resumen"
+
+#. module: account_einvoice
+#: help:account.einvoice,message_unread:0
+msgid "If checked new messages require your attention."
+msgstr "Si hay mensajes nuevos controlados,requieren su atención."
+
+#. module: account_einvoice
+#: selection:account.ejournal,type:0
+msgid "Summary Bill"
+msgstr "Cuenta de resumen"
+
+#. module: account_einvoice
+#: help:account.einvoice,invalidate_id:0
+msgid "Invalidate request used to cancel this request"
+msgstr "Invalidar solicitud utilizada para cancelar esta solicitud"
+
+#. module: account_einvoice
+#: field:account.ejournal,sequence_type:0
+msgid "Sequence Type"
+msgstr "Tipo de secuencia"
+
+#. module: account_einvoice
+#: view:account.einvoice:0
+msgid "Generate XML"
+msgstr "Generar XML"
+
+#. module: account_einvoice
+#: field:account.ejournal,sequence_id:0
+msgid "Sequence"
+msgstr "Secuencia"
+
+#. module: account_einvoice
+#: view:account.einvoice:0
+#: field:account.einvoice,invoice_ids:0
+msgid "Invoices"
+msgstr "Facturas"
+
+#. module: account_einvoice
+#: view:account.ejournal:0
+msgid "eJournal"
+msgstr "Diario electrónico"
+
+#. module: account_einvoice
+#: field:account.einvoice,origin_ids:0
+msgid "Origin Requests"
+msgstr "Solicitudes de origen"
+
+#. module: account_einvoice
+#: selection:account.ejournal,comunication_type:0
+msgid "Synchronous"
+msgstr "Síncrono"
+
+#. module: account_einvoice
+#: view:account.einvoice:0
+msgid "eInvoice Response"
+msgstr "Respuesta de factura electrónica"
+
+#. module: account_einvoice
+#: model:res.groups,name:account_einvoice.group_einvoice_manager
+msgid "Manager"
+msgstr "Responsable"
+
+#. module: account_einvoice
+#: view:account.einvoice:0
+msgid "Search Electronic Invoices"
+msgstr "Buscar Facturas Electrónicas"
+
+#. module: account_einvoice
+#: model:ir.module.category,description:account_einvoice.module_category_einvoice
+msgid "Helps you manage your electronic invoices in easy and secure way."
+msgstr "Te ayuda a administrar tus facturas electrónicas de una manera sencilla y segura."
+
+#. module: account_einvoice
+#: selection:account.einvoice,state:0
+msgid "Warning"
+msgstr "Advertencia"
+
+#. module: account_einvoice
+#: model:ir.model,name:account_einvoice.model_account_einvoice
+msgid "Email Thread"
+msgstr "Hilo de mensajes"
+
+#. module: account_einvoice
+#: view:account.ejournal:0
+msgid "Search Electronic Journal"
+msgstr "Buscar diario electrónico"
+
+#. module: account_einvoice
+#: field:account.einvoice,file:0
+msgid "File"
+msgstr "Archivo"
+
+#. module: account_einvoice
+#: view:account.einvoice:0
+#: selection:account.einvoice,state:0
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: account_einvoice
+#: field:account.einvoice,message_follower_ids:0
+msgid "Followers"
+msgstr "Seguidores"
+
+#. module: account_einvoice
+#: sql_constraint:account.einvoice:0
+msgid "Electronic Invoice Name must be unique per Company!"
+msgstr "El nombre de la factura electrónica debe ser único para cada empresa!"
+
+#. module: account_einvoice
+#: view:account.einvoice:0
+msgid "Validated Electronic Invoices"
+msgstr "Validado de facturas electrónicas"
+
+#. module: account_einvoice
+#: model:ir.model,name:account_einvoice.model_account_journal
+msgid "Journal"
+msgstr "Diario"
+
+#. module: account_einvoice
+#: view:account.ejournal:0
+msgid "Electronic Journal List"
+msgstr "Lista de diario electrónico"

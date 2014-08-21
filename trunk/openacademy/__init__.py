@@ -1,1 +1,1 @@
-import openacademy
+import openacademy, partner, wizard

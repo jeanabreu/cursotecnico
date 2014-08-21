@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		
+		<record model='ir.ui.view' id='view_account_load_form'>
+			<field name='name'>Account Load Form.inherit.load.asset</field>
+			<field name='model'>account.load</field>
+			<field name='inherit_id' ref='account_load.view_account_load_form'/>
+			<field name='arch' type='xml'>
+                <field name="account_id" position="after">
+                    <field name="product_id"/>
+                    <field name="quantity"/>
+                </field>
+			</field>
+		</record>
+        
+	</data>
+</openerp>

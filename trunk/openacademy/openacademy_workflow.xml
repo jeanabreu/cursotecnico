@@ -1,0 +1,72 @@
+<?xml version="1.0" ?>
+<openerp>
+	<data>
+		<record id="workflow_openacademysesions0" model="workflow">
+			<field eval="1" name="on_create"/>
+			<field name="name">Openacademy Sesions</field>
+			<field name="osv">openacademy.session</field>
+		</record>
+        
+		<record id="workflow_activity_confirmed0" model="workflow.activity">
+			<field name="kind">function</field>
+			<field name="name">confirmed</field>
+			<field name="join_mode">XOR</field>
+			<field model="workflow" name="wkf_id" search="[('name', '=', u'Openacademy Sesions')]"/>
+			<field eval="0" name="flow_stop"/>
+			<field name="split_mode">XOR</field>
+			<field name="action">action_confirm()</field>
+			<field eval="0" name="flow_start"/>
+		</record>
+        <record id="workflow_activity_done0" model="workflow.activity">
+			<field name="kind">function</field>
+			<field name="name">done</field>
+			<field name="join_mode">XOR</field>
+			<field model="workflow" name="wkf_id" search="[('name', '=', u'Openacademy Sesions')]"/>
+			<field eval="0" name="flow_stop"/>
+			<field name="split_mode">XOR</field>
+			<field name="action">action_done()</field>
+			<field eval="0" name="flow_start"/>
+		</record>
+		<record id="workflow_activity_draft0" model="workflow.activity">
+			<field name="kind">function</field>
+			<field name="name">draft</field>
+			<field name="join_mode">XOR</field>
+			<field model="workflow" name="wkf_id" search="[('name', '=', u'Openacademy Sesions')]"/>
+			<field eval="0" name="flow_stop"/>
+			<field name="split_mode">XOR</field>
+			<field name="action">action_draft()</field>
+			<field eval="1" name="flow_start"/>
+		</record>
+		        
+		<record id="workflow_transition_0" model="workflow.transition">
+			<field name="signal">set_done</field>
+			<field name="act_from" ref="workflow_activity_confirmed0"/>
+			<field name="act_to" ref="workflow_activity_done0"/>
+			<field name="condition">True</field>
+		</record>
+		<record id="workflow_transition_1" model="workflow.transition">
+			<field name="signal">set_draft</field>
+			<field name="act_from" ref="workflow_activity_confirmed0"/>
+			<field name="act_to" ref="workflow_activity_draft0"/>
+			<field name="condition">True</field>
+		</record>
+		<record id="workflow_transition_2" model="workflow.transition">
+			<field name="signal">set_confirm</field>
+			<field name="act_from" ref="workflow_activity_draft0"/>
+			<field name="act_to" ref="workflow_activity_confirmed0"/>
+			<field name="condition">True</field>
+		</record>
+		<record id="workflow_transition_3" model="workflow.transition">
+			<field name="signal">set_draft</field>
+			<field name="act_from" ref="workflow_activity_done0"/>
+			<field name="act_to" ref="workflow_activity_draft0"/>
+			<field name="condition">True</field>
+		</record>
+		<record id="workflow_transition_4" model="workflow.transition">
+			<field name="act_from" ref="workflow_activity_draft0"/>
+			<field name="act_to" ref="workflow_activity_confirmed0"/>
+			<field name="condition">seats&lt;(len(atendee_ids)*2)</field>
+		</record>
+
+	</data>
+</openerp>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record model='ir.ui.view' id='crm_case_form_view_oppor'>
+			<field name='name'>Opportunities.inherit.sale.reseller</field>
+			<field name='model'>crm.lead</field>
+			<field name='inherit_id' ref='crm.crm_case_form_view_oppor'/>
+			<field name='arch' type='xml'>
+				<xpath expr="//field[@name='user_id']" position="after">
+					<field name="reseller_id"/>
+				</xpath>
+				<xpath expr="//field[@name='partner_id']" position="attributes">
+					<attribute name="domain">[('parent_id','=',False)]</attribute>
+				</xpath>
+			</field>
+		</record>
+		
+		<record model='ir.ui.view' id='crm_case_tree_view_oppor'>
+			<field name='name'>Opportunities Tree.inherit.sale.reseller</field>
+			<field name='model'>crm.lead</field>
+			<field name='inherit_id' ref='crm.crm_case_tree_view_oppor'/>
+			<field name='arch' type='xml'>
+				<xpath expr="//field[@name='user_id']" position="after">
+					<field name="reseller_id"/>
+				</xpath>
+			</field>
+		</record>
+		
+		<record model='ir.ui.view' id='view_crm_case_opportunities_filter'>
+			<field name='name'>CRM - Opportunities Search.inherit.sale.reseller</field>
+			<field name='model'>crm.lead</field>
+			<field name='inherit_id' ref='crm.view_crm_case_opportunities_filter'/>
+			<field name='arch' type='xml'>
+				<xpath expr="//field[@name='partner_id']" position="after">
+					<field name="reseller_id"/>
+				</xpath>
+			</field>
+		</record>
+		
+		<record model='ir.ui.view' id='crm_case_form_view_leads'>
+			<field name='name'>CRM - Leads Form.inherit.sale.reseller</field>
+			<field name='model'>crm.lead</field>
+			<field name='inherit_id' ref='crm.crm_case_form_view_leads'/>
+			<field name='arch' type='xml'>
+				<xpath expr="//field[@name='user_id']" position="after">
+					<field name="reseller_id"/>
+				</xpath>
+				<xpath expr="//field[@name='partner_id']" position="attributes">
+					<attribute name="domain">[('parent_id','=',False)]</attribute>
+				</xpath>
+			</field>
+		</record>
+		
+		<record model='ir.ui.view' id='crm_case_tree_view_leads'>
+			<field name='name'>Leads.inherit.sale.reseller</field>
+			<field name='model'>crm.lead</field>
+			<field name='inherit_id' ref='crm.crm_case_tree_view_leads'/>
+			<field name='arch' type='xml'>
+				<xpath expr="//field[@name='phone']" position="after">
+					<field name="reseller_id"/>
+				</xpath>
+			</field>
+		</record>
+		
+		<record model='ir.ui.view' id='view_crm_case_leads_filter'>
+			<field name='name'>CRM - Leads Search.inherit.sale.reseller</field>
+			<field name='model'>crm.lead</field>
+			<field name='inherit_id' ref='crm.view_crm_case_leads_filter'/>
+			<field name='arch' type='xml'>
+				<xpath expr="//field[@name='user_id']" position="after">
+					<field name="reseller_id"/>
+				</xpath>
+			</field>
+		</record>
+	</data>
+</openerp>

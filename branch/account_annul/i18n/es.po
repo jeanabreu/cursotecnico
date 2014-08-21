@@ -1,0 +1,41 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* account_annul
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 7.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-05-07 21:16+0000\n"
+"PO-Revision-Date: 2014-05-12 15:46-0500\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+
+#. module: account_annul
+#: view:account.invoice:0
+msgid "Cancell Invoice"
+msgstr "Cancelar Factura"
+
+#. module: account_annul
+#: field:account.move,annul:0
+msgid "Annulled"
+msgstr "Anulado"
+
+#. module: account_annul
+#: view:account.invoice:0
+msgid "Annul Invoice"
+msgstr "Anular Factura"
+
+#. module: account_annul
+#: model:ir.model,name:account_annul.model_account_move
+msgid "Account Entry"
+msgstr "Asiento contable"
+
+#. module: account_annul
+#: model:ir.model,name:account_annul.model_account_invoice
+msgid "Invoice"
+msgstr "Factura"

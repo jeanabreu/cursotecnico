@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>		
+	    <menuitem name='OpenAcademy' id='openacademy_menu_root'/>
+	    <menuitem name='OpenAcademy' parent='openacademy_menu_root' id='openacademy_menu'/>
+	    <record id="view_course_tree" model="ir.ui.view">
+            <field name="name">Course List</field>
+            <field name="model">openacademy.course</field>
+            <field name="arch" type="xml">
+                <tree string="Course List">
+                    <field name="name"/>
+                    <field name="description"/>
+                </tree>
+            </field>
+        </record>
+	    <record id="view_course_form" model="ir.ui.view">
+            <field name="name">Course Form</field>
+            <field name="model">openacademy.course</field>
+            <field name="arch" type="xml">
+				<form string="Course Form">
+                    <field name="name" colspan="4"/>
+                    <field name="responsible_id" colspan="4"/>                    
+                    <notebook colspan="4"> 
+                    	<page string="Sessions"> 
+                    		<field name="session_ids" nolabel="1" colspan="4"> </field>
+                  		</page>
+                    	<page string="Description"> 
+                    		<field name="description" nolabel="1" colspan="4"> </field>
+                  		</page>
+                  	</notebook>
+                </form>                
+            </field>
+        </record>
+	    <record model="ir.actions.act_window" id="course_action">
+		    <field name="name">Courses</field>
+		    <field name="res_model">openacademy.course</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">tree,form</field>
+	    </record>
+	    <menuitem name='Course' id='course_menu' parent='openacademy_menu' action="course_action"/>
+
+	    <record id="view_session_tree" model="ir.ui.view">
+            <field name="name">Session List</field>
+            <field name="model">openacademy.session</field>
+            <field name="arch" type="xml">
+                <tree string="Session List" colors="blue:duration&lt;5;red:duration>15">
+                    <field name="name"/>
+                    <field name="startdate"/>
+                    <field name="duration"/>
+                </tree>
+            </field>
+        </record>
+	    <record id="view_session_form" model="ir.ui.view">
+            <field name="name">Session Form</field>
+            <field name="model">openacademy.session</field>
+            <field name="arch" type="xml">
+				<form string="Session Form" version='7.0'>
+					<header>
+						<!--button name='action_draft' type='object' string='Draft' states='confirm,done'/> 
+						<button name='action_confirm' type='object' string='Confirm' states='draft' class="oe_highlight"/> 
+						<button name='action_done' type='object' string='Done' states='aproved' class="oe_highlight"/> 
+						<button name='action_aproved' type='object' string='Aproved' states='confirm' class="oe_highlight" groups='cursos_sesiones.session_aproved'/--> 
+
+						<button name='set_draft'  string='DraftWk' /> 
+						<button name='set_confirm'  string='ConfirmWk' /> 
+						<button name='set_done'  string='DoneWk' /> 
+
+						<field name='state' widget='statusbar'></field>
+						
+					</header>
+					<sheet>
+						<group>
+							<group>
+			                    <field name="name" />
+			                    <field name="startdate"/>
+			                    <field name="stopdate"/>
+							</group>
+							<group>
+			                    <field name="duration"/>
+			                    <field name="seats"/>
+			                    <field name="course_id"/>
+			                    <field name="instructor_id"/>
+			                    <field name="active"/>
+							</group>
+						</group>
+						<separator string="Attendees"/>
+	                    <field name="atendee_ids"  > 
+							<tree string="Attendee List" editable="bottom" >
+			                    <field name="name" />
+			                    <field name="partner_id" />
+			                </tree>
+	                    </field>
+					</sheet>
+                </form>                
+            </field>
+        </record>
+	    <record model="ir.actions.act_window" id="session_action">
+		    <field name="name">Session</field>
+		    <field name="res_model">openacademy.session</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">tree,form,calendar</field>
+	    </record>
+	    <menuitem name='Session' id='session_menu' parent='openacademy_menu' action="session_action"/>
+        <record id="view_atendee_tree" model="ir.ui.view">
+            <field name="name">Attendee List</field>
+            <field name="model">openacademy.atendee</field>
+            <field name="arch" type="xml">
+				<tree string="Attendee List" editable="bottom" >
+                    <field name="name" />
+                    <field name="session_id" />
+                    <field name="partner_id" />
+                </tree>
+            </field>
+        </record>
+        <record id="atendee_act" model="ir.actions.act_window">
+            <field name="name">Attendee</field>
+            <field name="res_model">openacademy.atendee</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+	    <record id="view_session_calendar" model="ir.ui.view">
+            <field name="name">Session Calendar</field>
+            <field name="model">openacademy.session</field>
+            <field name="arch" type="xml">
+                <calendar string="Session Calendar"
+                	date_start="startdate"
+                	date_stop='stopdate'
+                	color='instructor_id'>
+                    <field name="name"/>
+                </calendar>
+            </field>
+        </record>
+        <!-- sub menu de lateral que depende de la cabecera, ejm facturas de clientes-->
+        <menuitem id="atendee" name="Attendee" parent="openacademy_menu" sequence="3" action="atendee_act" />
+
+	</data>
+</openerp>

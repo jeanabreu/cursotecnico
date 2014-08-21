@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record model='ir.ui.view' id='procurement_form_view'>
+			<field name='name'>procurement.order.form.inherit.procurement.supply</field>
+			<field name='model'>procurement.order</field>
+			<field name='inherit_id' ref='procurement.procurement_form_view'/>
+			<field name='arch' type='xml'>
+				<xpath expr="//notebook" position="inside">
+					<page string="Purchase Options">
+						<group>
+							<group>
+								<field name="supply_partner_id"/>
+								<field name="supply_price_unit"/>
+							</group>
+							<group>
+								<field name="supply_pricelist_id"/>
+								<field name="supply_discount"/>
+								<label for="supply"/>
+								<group>
+									<field name="supply" nolabel="1"/>
+									<button name="action_supply" string="Supply" type="object" attrs="{'invisible':[('supply','=',True)]}"/>
+								</group>
+								
+							</group>
+						</group>
+					</page>
+				</xpath>
+			</field>
+		</record>
+		
+	</data>
+</openerp>

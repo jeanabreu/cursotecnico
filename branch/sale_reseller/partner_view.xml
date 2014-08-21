@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		
+		<record model='ir.ui.view' id='view_res_partner_filter'>
+			<field name='name'>res.partner.select.inherit.sale.reseller</field>
+			<field name='model'>res.partner</field>
+			<field name='inherit_id' ref='base.view_res_partner_filter'/>
+			<field name='arch' type='xml'>
+				<xpath expr="//field[@name='parent_id']" position="after">
+					<field name="reseller_id"/>
+				</xpath>
+			</field>
+		</record>
+
+		<record model='ir.ui.view' id='view_partner_form'>
+			<field name='name'>res.partner.form.inherit.sale.reseller</field>
+			<field name='model'>res.partner</field>
+			<field name='inherit_id' ref='base.view_partner_form'/>
+			<field name='arch' type='xml'>
+				<xpath expr="//group/group/field[@name='supplier']" position="after">
+					<field name="reseller"/>
+				</xpath>
+				<xpath expr="//field[@name='user_id']" position="after">
+					<field name="reseller_id"/>
+				</xpath>
+				<xpath expr="//notebook" position="inside">
+					<page string="Reseller Customers" attrs="{'invisible':[('reseller','=',False)]}">
+						<field name="reseller_childs"/>
+					</page>
+				</xpath>
+			</field>
+		</record>
+		
+	</data>
+</openerp>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record model='ir.ui.view' id='view_crm_make_sal'>
+			<field name='name'>crm.make.sale.form.inherit.sale.reseller</field>
+			<field name='model'>crm.make.sale</field>
+			<field name='inherit_id' ref='sale_crm.view_crm_make_sale'/>
+			<field name='arch' type='xml'>
+				<xpath expr="//field[@name='partner_id']" position="replace">
+					<field name="reseller" invisible="1"/>
+					<field name="partner_id" required="1" on_change="onchange_partner_id(partner_id,context)"/>
+					<field name="reseller_customer_id" attrs="{'invisible':[('reseller','=',False)]}"/>
+				</xpath>
+			</field>
+		</record>
+		
+	</data>
+</openerp>

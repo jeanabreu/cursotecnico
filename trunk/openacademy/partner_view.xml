@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record model='ir.ui.view' id='view_partner_form'>
+			<field name='name'>res.partner.form.inherit.openacademy</field>
+			<field name='model'>res.partner</field>
+			<field name='inherit_id' ref='base.view_partner_form'/>
+			<field name='arch' type='xml'>
+                <field name="title" position="after">
+                    <field name="is_instructor" />
+                </field>
+                <xpath expr="//notebook"  position="inside">
+                	<page string = 'sessions' attrs="{'invisible':[('is_instructor','=',False)]}">
+                		<field name="session_ids" /> 
+                	</page>
+                    
+                </xpath>
+			</field>
+		</record>
+        
+	</data>
+</openerp>

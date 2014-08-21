@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+    	
+	    <record id="view_pos_config_form" model="ir.ui.view">
+	        <field name="name">pos.config.form.view.inherit.sequence</field>
+	        <field name="model">pos.config</field>
+	        <field name="inherit_id" ref="point_of_sale.view_pos_config_form"/>
+	        <field name="arch" type="xml">
+	            <xpath expr="//field[@name='group_by']" position="after">
+	                <field name="javascript_report" />
+	            </xpath>
+	            <xpath expr="//group[@string='Material Interfaces']" position="after">
+	            	<separator string="Customize JavaScript Report" attrs="{'invisible':[('javascript_report','=',False)]}"/>
+	                <field name="javascript_report_src" nolabel="1" attrs="{'invisible':[('javascript_report','=',False)]}"/>
+	            </xpath>
+	        </field>
+	    </record>
+
+    </data>
+</openerp>

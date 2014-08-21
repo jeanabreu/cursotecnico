@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+        
+        <record model='ir.ui.view' id='view_account_journal_form'>
+			<field name='name'>account.journal.form.inherit.invoice.print</field>
+			<field name='model'>account.journal</field>
+			<field name='inherit_id' ref='account.view_account_journal_form'/>
+			<field name='arch' type='xml'>
+                <field name="sequence_id" position="after">
+                	<field name="invoice_report_id" attrs="{'invisible':[('type','not in',['sale','sale_refund'])]}"/>
+                </field>
+			</field>
+		</record>
+        
+	</data>
+</openerp>

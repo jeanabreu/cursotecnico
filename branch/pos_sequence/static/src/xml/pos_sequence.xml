@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+
+    <t t-extend="PosTicket">
+    	<t t-jquery="div div:first" t-operation="replace">
+    		<table>
+                <tr><td><t t-esc="widget.currentOrder.getNumber()"/></td><td class="pos-right-align">
+                    <t t-esc="new Date().toString(Date.CultureInfo.formatPatterns.shortDate + ' ' + Date.CultureInfo.formatPatterns.longTime)"/>
+                    </td></tr>
+            </table>
+       	</t>
+	</t>
+
+</templates>

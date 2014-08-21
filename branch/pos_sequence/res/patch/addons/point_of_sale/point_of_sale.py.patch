@@ -1,0 +1,39 @@
+=== modified file 'point_of_sale/point_of_sale.py'
+--- point_of_sale/point_of_sale.py	2013-08-15 20:56:43 +0000
++++ point_of_sale/point_of_sale.py	2013-08-18 02:42:07 +0000
+@@ -655,7 +655,8 @@
+     }
+ 
+     def create(self, cr, uid, values, context=None):
+-        values['name'] = self.pool.get('ir.sequence').get(cr, uid, 'pos.order')
++        if values['name'] == '/': 
++            values['name'] = self.pool.get('ir.sequence').get(cr, uid, 'pos.order')
+         return super(pos_order, self).create(cr, uid, values, context=context)
+ 
+     def test_paid(self, cr, uid, ids, context=None):
+@@ -900,6 +901,12 @@
+     def create_account_move(self, cr, uid, ids, context=None):
+         return self._create_account_move_line(cr, uid, ids, None, None, context=context)
+ 
++    def get_account_move_create(self, cr, uid, order, context=None):
++        return {
++            'ref' : order.name,
++            'journal_id': order.sale_journal.id,
++        }
++    
+     def _create_account_move_line(self, cr, uid, ids, session=None, move_id=None, context=None):
+         # Tricky, via the workflow, we only have one id in the ids variable
+         """Create a account move line of order grouped by products or not."""
+@@ -951,10 +958,7 @@
+ 
+             if move_id is None:
+                 # Create an entry for the sale
+-                move_id = account_move_obj.create(cr, uid, {
+-                    'ref' : order.name,
+-                    'journal_id': order.sale_journal.id,
+-                }, context=context)
++                move_id = account_move_obj.create(cr, uid, self.get_account_move_create(cr, uid, order, context=context), context=context)
+ 
+             def insert_data(data_type, values):
+                 # if have_to_group_by:
+
